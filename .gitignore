@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+*artifacts*
+*wandb*
+**mlruns**
+**outputs**
+activate.sh
+**.ipynb_checkpoints/
+**__pycache__**
+**multirun**
