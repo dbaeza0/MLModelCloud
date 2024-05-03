@@ -31,12 +31,11 @@ jobs:
         run: poetry run pytest
 
       - name: Generate UML Diagrams
-        run: pyreverse -o png api
+        run: pyreverse -o png ./apis/
 
       - name: Build Documentation
         run: |
-          cd docs/
-          make html
+          sphinx-build -E -b html docs/source docs/build  
 
       - name: Move Diagrams
         run: mv ./*.png /docs/build/_static/
@@ -54,5 +53,7 @@ jobs:
         if: success() && github.event_name == 'pull_request'
         run: |
           TAG=$(poetry version | cut -d' ' -f2)
-          git tag $TAG
-          git push origin $TAG_NAME
+          COMMIT_ABBR=$(git log --abbrev-commit -n 1 --format="%h")
+          echo "$TAG-$COMMIT_ABBR"
+          git tag "$TAG-$COMMIT_ABBR"
+          git push origin "$TAG-$COMMIT_ABBR"
