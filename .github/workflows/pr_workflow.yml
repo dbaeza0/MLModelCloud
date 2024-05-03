@@ -1,0 +1,58 @@
+name: PR Workflow
+
+on:
+  pull_request:
+    branches:
+      - master  # Adjust as needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+          source $HOME/.poetry/env
+          poetry install
+
+      - name: Install Graphviz
+        run: sudo apt-get install graphviz
+
+      - name: Run Tests
+        run: poetry run pytest
+
+      - name: Generate UML Diagrams
+        run: pyreverse -o png api
+
+      - name: Build Documentation
+        run: |
+          cd docs/
+          make html
+
+      - name: Move Diagrams
+        run: mv ./*.png /docs/build/_static/
+
+      - name: Commit Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Auto-generate UML diagrams and documentation"
+          git push
+
+      # Optionally, tag the commit
+      - name: Tag Commit
+        if: success() && github.event_name == 'pull_request'
+        run: |
+          TAG=$(poetry version | cut -d' ' -f2)
+          git tag $TAG
+          git push origin $TAG_NAME
