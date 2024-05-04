@@ -35,9 +35,11 @@ pythonpath = [
     "./"
 ]
 markers = [
-    "slow: mark test as slow",
-    "fast: mark test as fast",
-    "integration: mark test as integration",
+    "dpputt: data pipeline unit tests",
+    "apiutt: api unit tests",
+    "modelutt: ml model unit tests",
+    "dvt: data verification tests",
+    "integration: tests for integration for internal and external componment",
 ]
 addopts = [
     "--rootdir=./",
