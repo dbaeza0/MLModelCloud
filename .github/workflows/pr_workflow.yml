@@ -73,6 +73,14 @@ jobs:
       - name: Move Diagrams
         run: mv ./*.png docs/build/_static/
 
+      - name: Git Commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git reset poetry.toml
+          git commit -m "Auto-generate UML diagrams and documentation"
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
