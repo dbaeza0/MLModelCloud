@@ -8,3 +8,4 @@ activate.sh
 **.ipynb_checkpoints/
 **__pycache__**
 **multirun**
+.venv/

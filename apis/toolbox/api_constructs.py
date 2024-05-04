@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Tuple
+
+from fastapi import FastAPI
 from starlette.responses import FileResponse
 from apis.toolbox.api_models import ServiceHealth
 from datetime import datetime
@@ -7,10 +9,11 @@ from pathlib import Path
 
 
 class BaseAPI(ABC):
+    __version__ = "0.0.1"
     _start_time: datetime
     _api_name: str
-    __version__ = "0.0.1"
     _favicon_path = 'static/favicon.ico'
+    app: FastAPI
 
     @abstractmethod
     def all_data_sources_reachable(self) -> Tuple[int, str]:

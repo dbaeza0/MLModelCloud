@@ -11,48 +11,60 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v3
         with:
           python-version: '3.11'
 
       - name: Install Poetry
         run: |
-          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-          source $HOME/.poetry/env
-          poetry install
+          python -m pip install pipx
+          python -m pipx install poetry
+          python -m pipx ensurepath
+
+      - name: Poetry Install
+        run: |
+          poetry config virtualenvs.create true --local
+          poetry config virtualenvs.in-project true --local
+          poetry install --no-root
 
       - name: Install Graphviz
         run: sudo apt-get install graphviz
 
       - name: Run Tests
-        run: poetry run pytest
+        run: |
+          source .venv/bin/activate
+          poetry run pytest
 
       - name: Generate UML Diagrams
-        run: pyreverse -o png api
+        run: |
+          source .venv/bin/activate
+          pyreverse -o png ./apis/
 
       - name: Build Documentation
         run: |
-          cd docs/
-          make html
+          source .venv/bin/activate
+          sphinx-build -E -b html docs/source docs/build  
 
       - name: Move Diagrams
-        run: mv ./*.png /docs/build/_static/
+        run: mv ./*.png docs/build/_static/
 
       - name: Commit Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
+          git reset poetry.toml
           git commit -m "Auto-generate UML diagrams and documentation"
-          git push
 
       # Optionally, tag the commit
       - name: Tag Commit
         if: success() && github.event_name == 'pull_request'
         run: |
           TAG=$(poetry version | cut -d' ' -f2)
-          git tag $TAG
-          git push origin $TAG_NAME
+          COMMIT_ABBR=$(git log --abbrev-commit -n 1 --format="%h")
+          echo "$TAG-$COMMIT_ABBR"
+          git tag "$TAG-$COMMIT_ABBR"
+          git push origin "$TAG-$COMMIT_ABBR"
