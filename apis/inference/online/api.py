@@ -37,3 +37,10 @@ class OnlineInference(BaseAPI):
         """
         health = self.collect_health_data()
         return health
+
+    @classmethod
+    def instantiate_api(cls) -> BaseAPI:
+        api = OnlineInference()
+        api.app.add_api_route("/health_check", api.health_check, methods=["GET"])
+        api.app.add_api_route('/favicon.ico', api.favicon, methods=["GET"], include_in_schema=False)
+        return api

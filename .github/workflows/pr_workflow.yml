@@ -20,15 +20,18 @@ jobs:
 
       - name: Install Poetry
         run: |
-          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-          source $HOME/.poetry/env
+          python -m pip install pipx
+          python -m pipx install poetry
+          python -m pipx ensurepath
           poetry install
 
       - name: Install Graphviz
         run: sudo apt-get install graphviz
 
       - name: Run Tests
-        run: poetry run pytest
+        run: |
+          poetry shell
+          poetry run pytest
 
       - name: Generate UML Diagrams
         run: pyreverse -o png ./apis/
