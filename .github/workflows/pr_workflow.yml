@@ -6,9 +6,8 @@ on:
       - master  # Adjust as needed
 
 jobs:
-  build:
+  api_build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -30,13 +29,36 @@ jobs:
           poetry config virtualenvs.in-project true --local
           poetry install --no-root
 
-      - name: Install Graphviz
-        run: sudo apt-get install graphviz
-
       - name: Run Tests
         run: |
           source .venv/bin/activate
           poetry run pytest
+
+  docs_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11'
+
+      - name: Install Graphviz
+        run: sudo apt-get install graphviz
+
+      - name: Install Poetry
+        run: |
+          python -m pip install pipx
+          python -m pipx install poetry
+          python -m pipx ensurepath
+
+      - name: Poetry Install
+        run: |
+          poetry config virtualenvs.create true --local
+          poetry config virtualenvs.in-project true --local
+          poetry install --no-root
 
       - name: Generate UML Diagrams
         run: |
@@ -51,20 +73,19 @@ jobs:
       - name: Move Diagrams
         run: mv ./*.png docs/build/_static/
 
-      - name: Commit Changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git reset poetry.toml
-          git commit -m "Auto-generate UML diagrams and documentation"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+            github_token: ${{ secrets.PR_WORKFLOW_TOKEN }}
+            branch:  ${{ github.head_ref }}
+            force: true
 
-      # Optionally, tag the commit
-      - name: Tag Commit
-        if: success() && github.event_name == 'pull_request'
-        run: |
-          TAG=$(poetry version | cut -d' ' -f2)
-          COMMIT_ABBR=$(git log --abbrev-commit -n 1 --format="%h")
-          echo "$TAG-$COMMIT_ABBR"
-          git tag "$TAG-$COMMIT_ABBR"
-          git push origin "$TAG-$COMMIT_ABBR"
+#      # This should only be done in the merge workflow.
+#      - name: Tag Commit
+#        if: success() && github.event_name == 'pull_request'
+#        run: |
+#          TAG=$(poetry version | cut -d' ' -f2)
+#          COMMIT_ABBR=$(git log --abbrev-commit -n 1 --format="%h")
+#          echo "$TAG-$COMMIT_ABBR"
+#          git tag "$TAG-$COMMIT_ABBR"
+#          git push origin "$TAG-$COMMIT_ABBR"
