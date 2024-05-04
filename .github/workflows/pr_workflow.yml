@@ -23,14 +23,16 @@ jobs:
           python -m pip install pipx
           python -m pipx install poetry
           python -m pipx ensurepath
-          poetry install
+          poetry config virtualenvs.create true --local
+          poetry config virtualenvs.in-project true --local
+          poetry install --no-root
 
       - name: Install Graphviz
         run: sudo apt-get install graphviz
 
       - name: Run Tests
         run: |
-          poetry shell
+          source .venv/bin/activate
           poetry run pytest
 
       - name: Generate UML Diagrams
@@ -48,6 +50,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
+          git reset poetry.toml
           git commit -m "Auto-generate UML diagrams and documentation"
           git push
 
