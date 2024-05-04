@@ -55,6 +55,9 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git stash
+          git checkout ${{ github.head_ref }}
+          git stash pop
           git add .
           git reset poetry.toml
           git commit -m "Auto-generate UML diagrams and documentation"
