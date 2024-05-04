@@ -58,14 +58,14 @@ jobs:
           git add .
           git reset poetry.toml
           git commit -m "Auto-generate UML diagrams and documentation"
-
-      # Optionally, tag the commit
-      - name: Tag Commit
-        if: success() && github.event_name == 'pull_request'
-        run: |
-          TAG=$(poetry version | cut -d' ' -f2)
-          COMMIT_ABBR=$(git log --abbrev-commit -n 1 --format="%h")
-          echo "$TAG-$COMMIT_ABBR"
-          git tag "$TAG-$COMMIT_ABBR"
-          git push origin "$TAG-$COMMIT_ABBR"
           git push
+
+#      # This should only be done in the merge workflow.
+#      - name: Tag Commit
+#        if: success() && github.event_name == 'pull_request'
+#        run: |
+#          TAG=$(poetry version | cut -d' ' -f2)
+#          COMMIT_ABBR=$(git log --abbrev-commit -n 1 --format="%h")
+#          echo "$TAG-$COMMIT_ABBR"
+#          git tag "$TAG-$COMMIT_ABBR"
+#          git push origin "$TAG-$COMMIT_ABBR"
