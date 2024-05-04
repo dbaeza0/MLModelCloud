@@ -10,7 +10,22 @@ Welcome to MLModelCloud's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-.. automodule:: api.main
+.. automodule:: apis.inference.online.api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: apis.run
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: apis.toolbox.api_constructs
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: apis.toolbox.api_models
    :members:
    :undoc-members:
    :show-inheritance:
