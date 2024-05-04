@@ -68,3 +68,4 @@ jobs:
           echo "$TAG-$COMMIT_ABBR"
           git tag "$TAG-$COMMIT_ABBR"
           git push origin "$TAG-$COMMIT_ABBR"
+          git push
