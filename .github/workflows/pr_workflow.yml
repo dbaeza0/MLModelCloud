@@ -49,7 +49,7 @@ jobs:
           sphinx-build -E -b html docs/source docs/build  
 
       - name: Move Diagrams
-        run: mv ./*.png /docs/build/_static/
+        run: mv ./*.png docs/build/_static/
 
       - name: Commit Changes
         run: |
