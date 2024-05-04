@@ -45,19 +45,39 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Welcome to MLModelCloud’s documentation!</a><ul>
-<li><a class="reference internal" href="#api.main.APIWrapper"><code class="docutils literal notranslate"><span class="pre">APIWrapper</span></code></a><ul>
-<li><a class="reference internal" href="#api.main.APIWrapper.another_method"><code class="docutils literal notranslate"><span class="pre">APIWrapper.another_method()</span></code></a></li>
-<li><a class="reference internal" href="#api.main.APIWrapper.root"><code class="docutils literal notranslate"><span class="pre">APIWrapper.root()</span></code></a></li>
+<li><a class="reference internal" href="#apis.inference.online.api.OnlineInference"><code class="docutils literal notranslate"><span class="pre">OnlineInference</span></code></a><ul>
+<li><a class="reference internal" href="#apis.inference.online.api.OnlineInference.all_data_sources_reachable"><code class="docutils literal notranslate"><span class="pre">OnlineInference.all_data_sources_reachable()</span></code></a></li>
+<li><a class="reference internal" href="#apis.inference.online.api.OnlineInference.health_check"><code class="docutils literal notranslate"><span class="pre">OnlineInference.health_check()</span></code></a></li>
+<li><a class="reference internal" href="#apis.inference.online.api.OnlineInference.instantiate_api"><code class="docutils literal notranslate"><span class="pre">OnlineInference.instantiate_api()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#api.main.Item"><code class="docutils literal notranslate"><span class="pre">Item</span></code></a><ul>
-<li><a class="reference internal" href="#api.main.Item.description"><code class="docutils literal notranslate"><span class="pre">Item.description</span></code></a></li>
-<li><a class="reference internal" href="#api.main.Item.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">Item.model_computed_fields</span></code></a></li>
-<li><a class="reference internal" href="#api.main.Item.model_config"><code class="docutils literal notranslate"><span class="pre">Item.model_config</span></code></a></li>
-<li><a class="reference internal" href="#api.main.Item.model_fields"><code class="docutils literal notranslate"><span class="pre">Item.model_fields</span></code></a></li>
-<li><a class="reference internal" href="#api.main.Item.name"><code class="docutils literal notranslate"><span class="pre">Item.name</span></code></a></li>
-<li><a class="reference internal" href="#api.main.Item.price"><code class="docutils literal notranslate"><span class="pre">Item.price</span></code></a></li>
-<li><a class="reference internal" href="#api.main.Item.tax"><code class="docutils literal notranslate"><span class="pre">Item.tax</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_constructs.BaseAPI"><code class="docutils literal notranslate"><span class="pre">BaseAPI</span></code></a><ul>
+<li><a class="reference internal" href="#apis.toolbox.api_constructs.BaseAPI.all_data_sources_reachable"><code class="docutils literal notranslate"><span class="pre">BaseAPI.all_data_sources_reachable()</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_constructs.BaseAPI.app"><code class="docutils literal notranslate"><span class="pre">BaseAPI.app</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_constructs.BaseAPI.collect_health_data"><code class="docutils literal notranslate"><span class="pre">BaseAPI.collect_health_data()</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_constructs.BaseAPI.favicon"><code class="docutils literal notranslate"><span class="pre">BaseAPI.favicon()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.Item"><code class="docutils literal notranslate"><span class="pre">Item</span></code></a><ul>
+<li><a class="reference internal" href="#apis.toolbox.api_models.Item.description"><code class="docutils literal notranslate"><span class="pre">Item.description</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.Item.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">Item.model_computed_fields</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.Item.model_config"><code class="docutils literal notranslate"><span class="pre">Item.model_config</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.Item.model_fields"><code class="docutils literal notranslate"><span class="pre">Item.model_fields</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.Item.name"><code class="docutils literal notranslate"><span class="pre">Item.name</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.Item.price"><code class="docutils literal notranslate"><span class="pre">Item.price</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.Item.tax"><code class="docutils literal notranslate"><span class="pre">Item.tax</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.ServiceHealth"><code class="docutils literal notranslate"><span class="pre">ServiceHealth</span></code></a><ul>
+<li><a class="reference internal" href="#apis.toolbox.api_models.ServiceHealth.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">ServiceHealth.model_computed_fields</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.ServiceHealth.model_config"><code class="docutils literal notranslate"><span class="pre">ServiceHealth.model_config</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.ServiceHealth.model_fields"><code class="docutils literal notranslate"><span class="pre">ServiceHealth.model_fields</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.ServiceHealth.name"><code class="docutils literal notranslate"><span class="pre">ServiceHealth.name</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.ServiceHealth.status"><code class="docutils literal notranslate"><span class="pre">ServiceHealth.status</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.ServiceHealth.status_message"><code class="docutils literal notranslate"><span class="pre">ServiceHealth.status_message</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.ServiceHealth.timezone"><code class="docutils literal notranslate"><span class="pre">ServiceHealth.timezone</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.ServiceHealth.uptime"><code class="docutils literal notranslate"><span class="pre">ServiceHealth.uptime</span></code></a></li>
+<li><a class="reference internal" href="#apis.toolbox.api_models.ServiceHealth.version"><code class="docutils literal notranslate"><span class="pre">ServiceHealth.version</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -93,10 +113,10 @@
 <h1>Welcome to MLModelCloud’s documentation!<a class="headerlink" href="#welcome-to-mlmodelcloud-s-documentation" title="Link to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<span class="target" id="module-api.main"></span><dl class="py class">
-<dt class="sig sig-object py" id="api.main.APIWrapper">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.main.</span></span><span class="sig-name descname"><span class="pre">APIWrapper</span></span><a class="headerlink" href="#api.main.APIWrapper" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<span class="target" id="module-apis.inference.online.api"></span><dl class="py class">
+<dt class="sig sig-object py" id="apis.inference.online.api.OnlineInference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apis.inference.online.api.</span></span><span class="sig-name descname"><span class="pre">OnlineInference</span></span><a class="headerlink" href="#apis.inference.online.api.OnlineInference" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apis.toolbox.api_constructs.BaseAPI" title="apis.toolbox.api_constructs.BaseAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseAPI</span></code></a></p>
 <p>Wraps API methods for handling requests.</p>
 <dl class="simple">
 <dt>Methods:</dt><dd><p>root(item: Item): Handles POST requests to the root endpoint with JSON body.</p>
@@ -105,40 +125,114 @@
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#api.main.APIWrapper.root" title="api.main.APIWrapper.root"><code class="xref py py-obj docutils literal notranslate"><span class="pre">root</span></code></a>(item)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#apis.inference.online.api.OnlineInference.all_data_sources_reachable" title="apis.inference.online.api.OnlineInference.all_data_sources_reachable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_data_sources_reachable</span></code></a>()</p></td>
+<td><p>This api does not use data sources.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#apis.inference.online.api.OnlineInference.health_check" title="apis.inference.online.api.OnlineInference.health_check"><code class="xref py py-obj docutils literal notranslate"><span class="pre">health_check</span></code></a>()</p></td>
 <td><p>Handles POST requests to the root endpoint.</p></td>
 </tr>
 </tbody>
 </table>
 <table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><strong>another_method</strong></p></td>
+<tr class="row-odd"><td><p><strong>collect_health_data</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>favicon</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>instantiate_api</strong></p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
-<dt class="sig sig-object py" id="api.main.APIWrapper.another_method">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">another_method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.main.APIWrapper.another_method" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="apis.inference.online.api.OnlineInference.all_data_sources_reachable">
+<span class="sig-name descname"><span class="pre">all_data_sources_reachable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apis.inference.online.api.OnlineInference.all_data_sources_reachable" title="Link to this definition"></a></dt>
+<dd><p>This api does not use data sources.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>tuple[int, str]: A tuple containing an HTTP status code and a message.</dt><dd><p>The status code indicates the result of the operation.
+The message provides additional details about the status.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="api.main.APIWrapper.root">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#api.main.Item" title="api.main.Item"><span class="pre">Item</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.main.APIWrapper.root" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="apis.inference.online.api.OnlineInference.health_check">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">health_check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apis.inference.online.api.OnlineInference.health_check" title="Link to this definition"></a></dt>
 <dd><p>Handles POST requests to the root endpoint.</p>
 <dl class="simple">
-<dt>Args:</dt><dd><p>item (Item): The item data sent in the JSON body.</p>
-</dd>
 <dt>Returns:</dt><dd><p>Response: A message confirming the received item.</p>
 </dd>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="apis.inference.online.api.OnlineInference.instantiate_api">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">instantiate_api</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#apis.toolbox.api_constructs.BaseAPI" title="apis.toolbox.api_constructs.BaseAPI"><span class="pre">BaseAPI</span></a></span></span><a class="headerlink" href="#apis.inference.online.api.OnlineInference.instantiate_api" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
-<dl class="py class">
-<dt class="sig sig-object py" id="api.main.Item">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.main.</span></span><span class="sig-name descname"><span class="pre">Item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.main.Item" title="Link to this definition"></a></dt>
+<span class="target" id="module-apis.run"></span><span class="target" id="module-apis.toolbox.api_constructs"></span><dl class="py class">
+<dt class="sig sig-object py" id="apis.toolbox.api_constructs.BaseAPI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apis.toolbox.api_constructs.</span></span><span class="sig-name descname"><span class="pre">BaseAPI</span></span><a class="headerlink" href="#apis.toolbox.api_constructs.BaseAPI" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#apis.toolbox.api_constructs.BaseAPI.all_data_sources_reachable" title="apis.toolbox.api_constructs.BaseAPI.all_data_sources_reachable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_data_sources_reachable</span></code></a>()</p></td>
+<td><p>Check if all data sources are reachable.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>collect_health_data</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>favicon</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="apis.toolbox.api_constructs.BaseAPI.all_data_sources_reachable">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">all_data_sources_reachable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#apis.toolbox.api_constructs.BaseAPI.all_data_sources_reachable" title="Link to this definition"></a></dt>
+<dd><p>Check if all data sources are reachable. If one fails, return (503, f’{failed_source_name}: error message’)</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>tuple[int, str]: A tuple containing an HTTP status code and a message.</dt><dd><p>The status code indicates the result of the operation.
+The message provides additional details about the status.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apis.toolbox.api_constructs.BaseAPI.app">
+<span class="sig-name descname"><span class="pre">app</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">FastAPI</span></em><a class="headerlink" href="#apis.toolbox.api_constructs.BaseAPI.app" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apis.toolbox.api_constructs.BaseAPI.collect_health_data">
+<span class="sig-name descname"><span class="pre">collect_health_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#apis.toolbox.api_models.ServiceHealth" title="apis.toolbox.api_models.ServiceHealth"><span class="pre">ServiceHealth</span></a></span></span><a class="headerlink" href="#apis.toolbox.api_constructs.BaseAPI.collect_health_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="apis.toolbox.api_constructs.BaseAPI.favicon">
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">favicon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apis.toolbox.api_constructs.BaseAPI.favicon" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-apis.toolbox.api_models"></span><dl class="py class">
+<dt class="sig sig-object py" id="apis.toolbox.api_models.Item">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apis.toolbox.api_models.</span></span><span class="sig-name descname"><span class="pre">Item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apis.toolbox.api_models.Item" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
 <p>Represents an item in the inventory.</p>
 <dl class="simple">
@@ -237,43 +331,196 @@ tax (float, optional): The tax rate for the item (default is None).</p>
 </tbody>
 </table>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="api.main.Item.description">
-<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#api.main.Item.description" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="apis.toolbox.api_models.Item.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#apis.toolbox.api_models.Item.description" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="api.main.Item.model_computed_fields">
-<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#api.main.Item.model_computed_fields" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="apis.toolbox.api_models.Item.model_computed_fields">
+<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#apis.toolbox.api_models.Item.model_computed_fields" title="Link to this definition"></a></dt>
 <dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="api.main.Item.model_config">
-<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#api.main.Item.model_config" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="apis.toolbox.api_models.Item.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#apis.toolbox.api_models.Item.model_config" title="Link to this definition"></a></dt>
 <dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="api.main.Item.model_fields">
-<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'description':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False),</span> <span class="pre">'name':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True),</span> <span class="pre">'price':</span> <span class="pre">FieldInfo(annotation=float,</span> <span class="pre">required=True),</span> <span class="pre">'tax':</span> <span class="pre">FieldInfo(annotation=float,</span> <span class="pre">required=False)}</span></em><a class="headerlink" href="#api.main.Item.model_fields" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="apis.toolbox.api_models.Item.model_fields">
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'description':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=False),</span> <span class="pre">'name':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True),</span> <span class="pre">'price':</span> <span class="pre">FieldInfo(annotation=float,</span> <span class="pre">required=True),</span> <span class="pre">'tax':</span> <span class="pre">FieldInfo(annotation=float,</span> <span class="pre">required=False)}</span></em><a class="headerlink" href="#apis.toolbox.api_models.Item.model_fields" title="Link to this definition"></a></dt>
 <dd><p>Metadata about the fields defined on the model,
 mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
 <p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="api.main.Item.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#api.main.Item.name" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="apis.toolbox.api_models.Item.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#apis.toolbox.api_models.Item.name" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="api.main.Item.price">
-<span class="sig-name descname"><span class="pre">price</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#api.main.Item.price" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="apis.toolbox.api_models.Item.price">
+<span class="sig-name descname"><span class="pre">price</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#apis.toolbox.api_models.Item.price" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="api.main.Item.tax">
-<span class="sig-name descname"><span class="pre">tax</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#api.main.Item.tax" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="apis.toolbox.api_models.Item.tax">
+<span class="sig-name descname"><span class="pre">tax</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#apis.toolbox.api_models.Item.tax" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="apis.toolbox.api_models.ServiceHealth">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">apis.toolbox.api_models.</span></span><span class="sig-name descname"><span class="pre">ServiceHealth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timezone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uptime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#apis.toolbox.api_models.ServiceHealth" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<p>Represents the health status of a service.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>name (str): The name of the service.
+version (tuple[int, str]): The version of the service.
+status (int): The status code indicating the health status.
+timezone (str): The timezone in which the service is operating.
+uptime (str): A string representing the uptime of the service.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_extra</span></code></dt><dd><p>Get extra fields set during validation.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_fields_set</span></code></dt><dd><p>Returns the set of fields that have been explicitly set on this model instance.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code>(*[, include, exclude, update, deep])</p></td>
+<td><p>Returns a copy of the model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_construct</span></code>([_fields_set])</p></td>
+<td><p>Creates a new instance of the <cite>Model</cite> class with validated data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_copy</span></code>(*[, update, deep])</p></td>
+<td><p>Usage docs: <a class="reference external" href="https://docs.pydantic.dev/2.6/concepts/serialization/#model_copy">https://docs.pydantic.dev/2.6/concepts/serialization/#model_copy</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_dump</span></code>(*[, mode, include, exclude, ...])</p></td>
+<td><p>Usage docs: <a class="reference external" href="https://docs.pydantic.dev/2.6/concepts/serialization/#modelmodel_dump">https://docs.pydantic.dev/2.6/concepts/serialization/#modelmodel_dump</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_dump_json</span></code>(*[, indent, include, ...])</p></td>
+<td><p>Usage docs: <a class="reference external" href="https://docs.pydantic.dev/2.6/concepts/serialization/#modelmodel_dump_json">https://docs.pydantic.dev/2.6/concepts/serialization/#modelmodel_dump_json</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_json_schema</span></code>([by_alias, ref_template, ...])</p></td>
+<td><p>Generates a JSON schema for a model class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_parametrized_name</span></code>(params)</p></td>
+<td><p>Compute the class name for parametrizations of generic classes.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_post_init</span></code>(_BaseModel__context)</p></td>
+<td><p>Override this method to perform additional initialization after <cite>__init__</cite> and <cite>model_construct</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_rebuild</span></code>(*[, force, raise_errors, ...])</p></td>
+<td><p>Try to rebuild the pydantic-core schema for the model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_validate</span></code>(obj, *[, strict, ...])</p></td>
+<td><p>Validate a pydantic model instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_validate_json</span></code>(json_data, *[, strict, ...])</p></td>
+<td><p>Usage docs: <a class="reference external" href="https://docs.pydantic.dev/2.6/concepts/json/#json-parsing">https://docs.pydantic.dev/2.6/concepts/json/#json-parsing</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_validate_strings</span></code>(obj, *[, strict, context])</p></td>
+<td><p>Validate the given object contains string data against the Pydantic model.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>construct</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>dict</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>from_orm</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>json</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>parse_file</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>parse_obj</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>parse_raw</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>schema</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>schema_json</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>update_forward_refs</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>validate</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apis.toolbox.api_models.ServiceHealth.model_computed_fields">
+<span class="sig-name descname"><span class="pre">model_computed_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ComputedFieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#apis.toolbox.api_models.ServiceHealth.model_computed_fields" title="Link to this definition"></a></dt>
+<dd><p>A dictionary of computed field names and their corresponding <cite>ComputedFieldInfo</cite> objects.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apis.toolbox.api_models.ServiceHealth.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#apis.toolbox.api_models.ServiceHealth.model_config" title="Link to this definition"></a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apis.toolbox.api_models.ServiceHealth.model_fields">
+<span class="sig-name descname"><span class="pre">model_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">FieldInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'name':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True),</span> <span class="pre">'status':</span> <span class="pre">FieldInfo(annotation=int,</span> <span class="pre">required=True),</span> <span class="pre">'status_message':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True),</span> <span class="pre">'timezone':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True),</span> <span class="pre">'uptime':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True),</span> <span class="pre">'version':</span> <span class="pre">FieldInfo(annotation=str,</span> <span class="pre">required=True)}</span></em><a class="headerlink" href="#apis.toolbox.api_models.ServiceHealth.model_fields" title="Link to this definition"></a></dt>
+<dd><p>Metadata about the fields defined on the model,
+mapping of field names to [<cite>FieldInfo</cite>][pydantic.fields.FieldInfo].</p>
+<p>This replaces <cite>Model.__fields__</cite> from Pydantic V1.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apis.toolbox.api_models.ServiceHealth.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#apis.toolbox.api_models.ServiceHealth.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apis.toolbox.api_models.ServiceHealth.status">
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#apis.toolbox.api_models.ServiceHealth.status" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apis.toolbox.api_models.ServiceHealth.status_message">
+<span class="sig-name descname"><span class="pre">status_message</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#apis.toolbox.api_models.ServiceHealth.status_message" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apis.toolbox.api_models.ServiceHealth.timezone">
+<span class="sig-name descname"><span class="pre">timezone</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#apis.toolbox.api_models.ServiceHealth.timezone" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apis.toolbox.api_models.ServiceHealth.uptime">
+<span class="sig-name descname"><span class="pre">uptime</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#apis.toolbox.api_models.ServiceHealth.uptime" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="apis.toolbox.api_models.ServiceHealth.version">
+<span class="sig-name descname"><span class="pre">version</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#apis.toolbox.api_models.ServiceHealth.version" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
