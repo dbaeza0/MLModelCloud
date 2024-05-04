@@ -23,6 +23,9 @@ jobs:
           python -m pip install pipx
           python -m pipx install poetry
           python -m pipx ensurepath
+
+      - name: Poetry Install
+        run: |
           poetry config virtualenvs.create true --local
           poetry config virtualenvs.in-project true --local
           poetry install --no-root
@@ -36,7 +39,9 @@ jobs:
           poetry run pytest
 
       - name: Generate UML Diagrams
-        run: pyreverse -o png ./apis/
+        run: |
+          source .venv/bin/activate
+          pyreverse -o png ./apis/
 
       - name: Build Documentation
         run: |
